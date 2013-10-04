@@ -12,44 +12,76 @@ public class Sistema {
 		// TODO Auto-generated method stub
 
 		String cmd="";
-		
+		Scanner scan = new Scanner(System.in);
+			
 		do {
-			
-			Scanner scan = new Scanner(System.in);
-			System.out.print("C:\\ ");
-			cmd = scan.next();
-			
-			
-			if (cmd.equalsIgnoreCase("image")) {
+			cmd = scan.next().toLowerCase();	
+			switch (cmd){
+				case "fim":
+					System.exit(0);				
+				case "imagem":
+					int h = scan.nextInt();
+					int w = scan.nextInt();
+					String cor = scan.next();
+					Imagem img = new Imagem();
+					img.criarImagem(h, w, cor);
+				case "reta":
+					int a = scan.nextInt();
+					int b = scan.nextInt();
+					int x = scan.nextInt();
+					int y = scan.nextInt();
+					Reta square = new Reta();
+					Ponto p0 = new Ponto(a, b);
+					Ponto p1 = new Ponto(x, y);
+					square.setVertices(p0, p1);
+					//square.draw(c);
+					break;
+						
+				case "circulo":
+					/*int a = scan.nextInt();
+					int b = scan.nextInt();
+					int r = scan.nextInt();*/
+					Circulo circle = new Circulo();
+					
+				case "Triangulo":
+					/*int a = scan.nextInt();
+					int b = scan.nextInt();
+					int p = scan.nextInt();
+					int q = scan.nextInt();
+					int x = scan.nextInt();
+					int y = scan.nextInt();*/
+					Triangulo triangle = new Triangulo();
+				case "Retangulo":
+					/*int a = scan.nextInt();
+					int b = scan.nextInt();
+					int x = scan.nextInt();
+					int y = scan.nextInt();*/
+					Retangulo rectangle = new Retangulo();
+				case "cor":
+					while (scan.hasNextInt()) {
+						int r = scan.nextInt();
+						
+						System.out.printf("%s",r);
+					}
 				
-				Imagem img = new Imagem();
-				int h = scan.nextInt();
-				int w = scan.nextInt();
-				String cor = scan.next();
+					Cor c = new Cor();
+					
+			}
+					
+					
+			/*public void tratarCmdImagem(){
+						
+			int h = scan.nextInt();
+			int w = scan.nextInt();
+			String cor = scan.next();
+			Imagem img = new Imagem(h,w,cor);
+			}*/
+					
+					
 				
 				
-			} else if (cmd.equalsIgnoreCase("reta")) {
-				Reta reta = new Reta();
-				int a = scan.nextInt();
-				int b = scan.nextInt();
-				int x = scan.nextInt();
-				int y = scan.nextInt();
+		} while (scan.hasNext());
 				
-			} else if (cmd.equalsIgnoreCase("Circulo")) {
-				
-			} else if (cmd.equalsIgnoreCase("Triangulo")) {
-				
-			} else {
-				cmd = "FIM";
-			}			
-		
-		
-		} while (!cmd.equalsIgnoreCase("FIM"));
-			
-			
-			
-			
-		
 	}
 
 }

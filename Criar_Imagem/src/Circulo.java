@@ -1,5 +1,5 @@
 
-public class Circulo {
+public class Circulo extends Shape{
 	
 	public void setCentro(Ponto p){
 		

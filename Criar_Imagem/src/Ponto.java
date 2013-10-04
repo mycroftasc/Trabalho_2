@@ -19,4 +19,10 @@ public class Ponto {
 	private void setY(int y) {
 		this.y = y;
 	}
+	
+	public Ponto(int vx, int vy){
+		
+		this.x = vx;
+		this.y = vy;
+	}
 }
